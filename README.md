@@ -1,6 +1,6 @@
 # Example 
 
-This project contains an example that allows developers to retrieve media from a multitude of IP cameras in a scalable matter. This approach allows data scientists, computer vision engineers and/or machine learning experts to focus on their models and abstract the complexity of managing a IP camera network through [Kerberos.io](https://erberos.io).
+This project contains an example that allows developers to retrieve media from a multitude of IP cameras in a scalable matter. This approach allows data scientists, computer vision engineers and/or machine learning experts to focus on their models and abstract the complexity of managing a IP camera network through [Kerberos.io](https://kerberos.io).
 
 An engineer will only need to install a few python models and configure the correct `environment variables` to start retreiving meda and inference with their own customised models.
 
