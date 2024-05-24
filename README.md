@@ -10,6 +10,14 @@ An engineer will only need to install a few python models and configure the corr
 
 ## Prerequisites
 
-- Kerberos Vault
+- Kerberos Vault: Have [a look here](https://doc.kerberos.io/vault/first-things-first) for a better understanding of what it's about and how to install.
 - Storage provider such as `Minio`, `S3`, `Google Storage`, `Ceph` or other S3 compliant storage.
 - Message broker such as `RabbitMQ`, `Kafka`, `SQS` or any other AMQP message broker.
+
+## Let's get started
+
+...
+
+## Install and run
+
+...
