@@ -6,6 +6,12 @@ An engineer will only need to install a few python models and configure the corr
 
 ## The architecture
 
+As you can see on following architecture, a network of IP cameras is made available in a specific network. By deploying the Kerberos.io stack: Kerberos Agent(s) and Kerberos Vault, we are able to connect and record (in chuncks) the IP camera streams, and store the relevant media on a storage provider of choice.
+
+Once media has been successfully stored (going from Kerberos Agent) into Kerberos Vault, an integration is activated and a message created in one of the preferred message brokers. This message includes various metadata such as `filename`, `cameraid`, `timestamp` and more.
+
+Specific python modules are made available, allowing a developer to build its own application and leverage boilerplate code to solely focus on the things that brings business value. The various python modules simplify to fetch messages from one or more queues, retrieve recording from a specific storage provider through Kerberos Vault, and various other computer vision functions and features.
+
 ![Kerberos Vault Integration](./assets/images/kerberos-vault-reader.png)
 
 ## Prerequisites
