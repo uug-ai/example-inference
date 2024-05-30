@@ -27,16 +27,15 @@ The packages can also be found on PyPi via these links:
 
 In this GitHub repository a requirements.txt file is provided with the example. This includes the listed packages, and others.
 
-```bash
-pip install uugai-python-kerberos-vault
-pip install uugai-python-dynamic-queue
+     pip install uugai-python-kerberos-vault
+     pip install uugai-python-dynamic-queue
 
-            OR
+or 
 
-pip install requirements.txt
-```
+     pip install requirements.txt
 
-With the necessary packages installed, they can be imported into your python file. More information about the usage of these can be found on PyPi or GitHub using:
+
+With the necessary packages installed, they can be imported into your Python file. More information about the usage of these can be found on PyPi or GitHub using:
 
 * Dynamic queue: [PyPi](https://pypi.org/project/uugai-python-dynamic-queue/), [GitHub](https://github.com/uug-ai/uugai-python-dynamic-queue)
 * Kerberos Vault implementation: [PyPi](https://pypi.org/project/uugai-python-kerberos-vault/), [GitHub](https://github.com/uug-ai/uugai-python-kerberos-vault)
@@ -46,7 +45,7 @@ from uugai_python_dynamic_queue.MessageBrokers import RabbitMQ          # Or oth
 from uugai_python_kerberos_vault.KerberosVault import KerberosVault
 ```
 
-Thereafter it's just a case of initiliazing, utilising your personal data:
+Thereafter it's just a case of initiliazing, utilising with your personal credentials with are read from [the `env` file](https://github.com/uug-ai/example-inference/blob/main/.env).
 ```Python
 # Initialize a message broker using the python_queue_reader package
 rabbitmq = RabbitMQ(queue_name = os.getenv('QUEUE_NAME'), 
