@@ -1,4 +1,4 @@
-#  Dynamic queueing & kerberos vault inference example
+#  Dynamic queueing and Kerberos Vault inference 
 This project contains an example that allows developers to retrieve media from a multitude of IP cameras in a scalable matter. This approach allows data scientists, computer vision engineers and/or machine learning experts to focus on their models and abstract the complexity of managing a IP camera network through [Kerberos.io](https://kerberos.io).
 
 An engineer only needs to install a few Python packages and configure the appropriate environment variables to start retrieving media and performing inference with their custom models.
