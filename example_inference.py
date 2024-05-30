@@ -6,7 +6,6 @@ from assets.scripts.read_first_frame import read_first_frame
 from dotenv import load_dotenv
 import os
 
-
 # Load environment variables
 load_dotenv()
 
