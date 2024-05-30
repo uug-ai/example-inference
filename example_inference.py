@@ -29,6 +29,7 @@ kerberos_vault = KerberosVault(storage_uri = os.getenv('STORAGE_URI'),
 
 # For educational purposes, we will receive 5 messages from the queue.
 # In a real-world scenario, the while loop would be used to continuously receive messages.
+# while True:
 for _ in range(5):
     # Receive message from the queue
     print("3) Receiving message from the queue...")
@@ -39,8 +40,13 @@ for _ in range(5):
     resp = kerberos_vault.retrieve_media(message, media_type = 'video', media_savepath = 'assets/videos/video.mp4')
 
 
+    ############################################
+    ###    Implement your own logic here     ###
+    ############################################
+
+
+    # In this example, we will perform color prediction on the first frame of the video
     print("5) Perform action on the media... (in this case color prediction)")
-    # Perform color prediction on the first frame
     main_colors, _, _ = ColorPrediction.find_main_colors(image = read_first_frame('assets/videos/video.mp4'),
                                                          min_clusters=1,
                                                          max_clusters=5,
