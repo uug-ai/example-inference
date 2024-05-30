@@ -64,6 +64,8 @@ kerberos_vault = KerberosVault(storage_uri = os.getenv('STORAGE_URI'),
 
 What remains depends on your specific implementation. For instance, a queue could be continuously read and processed, which is a common scenario. In the `inference_example`, the queue processes messages, retrieving videos from the Kerberos Vault. The main colors detected in the first frame (using [PredictColors](https://github.com/uug-ai/uugai-python-color-prediction)) are then calculated and returned. This logic could be expanded to include more complex tasks, such as implementing YOLOv8 or using your own custom models.
 
+<img src="./assets/images/plot_flowers.png" alt="PredictColorsPlot" width="1000"/>
+
 ```Python
 while True:
     # Receive message from the queue
@@ -76,4 +78,3 @@ while True:
     ###    Implement your own logic here     ###
     ############################################
 ```
-<img src="./assets/images/plot_flowers.png" alt="PredictColorsPlot" width="1000"/>
