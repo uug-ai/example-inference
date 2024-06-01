@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 def read_config():
     load_dotenv()
-    CONFIG = {
+    return {
         'QUEUE_NAME': os.getenv('QUEUE_NAME'),
         'TARGET_QUEUE_NAME': os.getenv('TARGET_QUEUE_NAME'),
         'EXCHANGE': os.getenv('EXCHANGE'),
@@ -17,4 +17,3 @@ def read_config():
         'STORAGE_ACCESS_KEY': os.getenv('STORAGE_ACCESS_KEY'),
         'STORAGE_SECRET_KEY': os.getenv('STORAGE_SECRET_KEY')
     }
-    return CONFIG
