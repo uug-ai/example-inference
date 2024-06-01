@@ -1,8 +1,7 @@
 from uugai_python_color_prediction.ColorPrediction import ColorPrediction
 from uugai_python_dynamic_queue.MessageBrokers import RabbitMQ
 from uugai_python_kerberos_vault.KerberosVault import KerberosVault
-
-from assets.scripts.read_first_frame import read_first_frame
+from utils.read_first_frame import read_first_frame
 from dotenv import load_dotenv
 import os
 
@@ -40,7 +39,7 @@ for _ in range(5):
     # Retrieve media from the Kerberos Vault
     print("4) Retrieving media from the Kerberos Vault...")
     resp = kerberos_vault.retrieve_media(
-        message, media_type='video', media_savepath='assets/videos/video.mp4')
+        message, media_type='video', media_savepath='data/video.mp4')
 
     ############################################
     # Implement your own logic here
@@ -49,7 +48,7 @@ for _ in range(5):
     # In this example, we will perform color prediction on the first frame of
     # the video
     print("5) Perform action on the media... (in this case color prediction)")
-    main_colors, _, _ = ColorPrediction.find_main_colors(image=read_first_frame('assets/videos/video.mp4'),
+    main_colors, _, _ = ColorPrediction.find_main_colors(image=read_first_frame('data/video.mp4'),
                                                          min_clusters=1,
                                                          max_clusters=5,
                                                          downsample_factor=0.95,
@@ -57,3 +56,7 @@ for _ in range(5):
                                                          verbose=False,
                                                          plot=False)
     print("\tMain colors found in the first frame:", main_colors.tolist())
+
+    # Cleanup the video
+    print("6) Cleaning up the video...")
+    os.remove('data/video.mp4')
