@@ -77,3 +77,9 @@ while True:
     ###    Implement your own logic here     ###
     ############################################
 ```
+
+# Dev Container
+
+Within this project we have added a `devcontainer.json` file allowing you to spin up a GitHub Codespace environment to seamless run this project.
+
+
