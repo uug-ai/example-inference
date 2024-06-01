@@ -48,17 +48,17 @@ from uugai_python_kerberos_vault.KerberosVault import KerberosVault
 Thereafter it's just a case of initiliazing, utilising with your personal credentials with are read from [the `env` file](https://github.com/uug-ai/example-inference/blob/main/.env).
 ```Python
 # Initialize a message broker using the python_queue_reader package
-rabbitmq = RabbitMQ(queue_name = os.getenv('QUEUE_NAME'), 
-                    target_queue_name = os.getenv('TARGET_QUEUE_NAME'), 
-                    exchange = os.getenv('EXCHANGE'), 
-                    host = os.getenv('HOST'), 
-                    username = os.getenv('USERNAME'),
-                    password = os.getenv('PASSWORD'))
+rabbitmq = RabbitMQ(queue_name=config['QUEUE_NAME'],
+                    target_queue_name=config['TARGET_QUEUE_NAME'],
+                    exchange=config['EXCHANGE'],
+                    host=config['HOST'],
+                    username=config['USERNAME'],
+                    password=config['PASSWORD'])
 
 # Initialize Kerberos Vault
-kerberos_vault = KerberosVault(storage_uri = os.getenv('STORAGE_URI'),
-                               storage_access_key = os.getenv('STORAGE_ACCESS_KEY'),
-                               storage_secret_key = os.getenv('STORAGE_SECRET_KEY'))
+kerberos_vault = KerberosVault(storage_uri=config['STORAGE_URI'],
+                               storage_access_key=config['STORAGE_ACCESS_KEY'],
+                               storage_secret_key=config['STORAGE_SECRET_KEY'])
 ```
 
 What remains depends on your specific implementation. For instance, a queue could be continuously read and processed, which is a common scenario. In the `inference_example`, the queue processes messages, retrieving videos from the Kerberos Vault. The main colors detected in the first frame (using [PredictColors](https://github.com/uug-ai/uugai-python-color-prediction)) are then calculated and returned. This logic could be expanded to include more complex tasks, such as implementing YOLOv8 or using your own custom models.
