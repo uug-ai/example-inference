@@ -2,29 +2,27 @@ from uugai_python_color_prediction.ColorPrediction import ColorPrediction
 from uugai_python_dynamic_queue.MessageBrokers import RabbitMQ
 from uugai_python_kerberos_vault.KerberosVault import KerberosVault
 from utils.read_first_frame import read_first_frame
-from dotenv import load_dotenv
+from utils.config import read_config
 import os
 
-# Load environment variables
-load_dotenv()
+# Read config, this will load the .env file in the root directory
+# and serve it as a config object
+config = read_config()
 
 # Initialize a message broker using the python_queue_reader package
 print("1) Initializing RabbitMQ...")
-rabbitmq = RabbitMQ(queue_name=os.getenv('QUEUE_NAME'),
-                    target_queue_name=os.getenv('TARGET_QUEUE_NAME'),
-                    exchange=os.getenv('EXCHANGE'),
-                    host=os.getenv('HOST'),
-                    username=os.getenv('USERNAME'),
-                    password=os.getenv('PASSWORD'))
+rabbitmq = RabbitMQ(queue_name=config['QUEUE_NAME'],
+                    target_queue_name=config['TARGET_QUEUE_NAME'],
+                    exchange=config['EXCHANGE'],
+                    host=config['HOST'],
+                    username=config['USERNAME'],
+                    password=config['PASSWORD'])
 
 # Initialize Kerberos Vault
 print("2) Initializing Kerberos Vault...")
-kerberos_vault = KerberosVault(storage_uri=os.getenv('STORAGE_URI'),
-                               storage_access_key=os.getenv(
-                                   'STORAGE_ACCESS_KEY'),
-                               storage_secret_key=os.getenv(
-                                   'STORAGE_SECRET_KEY'))
-
+kerberos_vault = KerberosVault(storage_uri=config['STORAGE_URI'],
+                               storage_access_key=config['STORAGE_ACCESS_KEY'],
+                               storage_secret_key=config['STORAGE_SECRET_KEY'])
 
 # For educational purposes, we will receive 5 messages from the queue.
 # In a real-world scenario, the while loop would be used to continuously
