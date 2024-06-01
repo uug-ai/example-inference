@@ -80,6 +80,10 @@ while True:
 
 # Dev Container
 
-Within this project we have added a `devcontainer.json` file allowing you to spin up a GitHub Codespace environment to seamless run this project.
+Within this project we have added a `devcontainer.json` file allowing you to spin up a GitHub Codespaces environment to seamless run this project.
 
+![Create GitHub Codespace](./assets/images/activate-codespace.png)
 
+Once opened you'll have a Visual Studio Code environment deployed, and you can simply navigate to the `Debug` section to run the project. Please do not forget to add your own `.env` credentials so it properly connects to your Kerberos Vault and message broker.
+
+![Open GitHub Codespace](./assets/images/run-codespace.png)
