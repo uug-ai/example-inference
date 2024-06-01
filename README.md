@@ -78,7 +78,7 @@ while True:
     ############################################
 ```
 
-# Dev Container
+# Development container
 
 Within this project we have added a `devcontainer.json` file allowing you to spin up a GitHub Codespaces environment to seamless run this project.
 
