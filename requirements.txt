@@ -1,5 +1,5 @@
 opencv-python
 python-dotenv
-uugai-python-color-prediction>=1.3.0
+uugai-python-color-prediction>=2.2.0
 uugai-python-dynamic-queue>=1.1.0
 uugai-python-kerberos-vault>=1.2.0

@@ -46,15 +46,17 @@ for _ in range(5):
     # In this example, we will perform color prediction on the first frame of
     # the video
     print("5) Perform action on the media... (in this case color prediction)")
-    main_colors, _, _ = ColorPrediction.find_main_colors(image=read_first_frame('data/video.mp4'),
-                                                         min_clusters=1,
-                                                         max_clusters=5,
-                                                         downsample_factor=0.95,
-                                                         increase_elbow=0,
-                                                         verbose=False,
-                                                         plot=False)
-    print("\tMain colors found in the first frame:", main_colors.tolist())
+    ColorPrediction.find_main_colors(
+        image=read_first_frame('data/video.mp4'),
+        min_clusters=1,
+        max_clusters=8,
+        downsample_factor=0.95,
+        increase_elbow=0,
+        verbose=True,
+        plot=False)
 
     # Cleanup the video
     print("6) Cleaning up the video...")
     os.remove('data/video.mp4')
+    print()
+    
